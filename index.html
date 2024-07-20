@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Rock Paper<br> <span class="S">Scissors</span></h1>
+    </header>
+    <div class="main">
+        <div class="title1">
+            <img class="title" src="Site-logo.webp" width="250px" alt="none">
+        <img class="logo" src="titlee.png" width="120px" alt="none">
+        </div>
+        
+
+        <div class="hand">
+            <img src="titlee.png" class="mini hidden" width="180px" alt="">
+            <div class="move1">
+                <img class="rock1 hidden" width="130px"
+                    src="https://www.pinclipart.com/picdir/big/559-5590543_rock-paper-scissors-png-clipart.png"
+                    alt="none">
+                <img class="paper1 hidden" width="130px"
+                    src="https://www.pinclipart.com/picdir/big/51-511523_rock-paper-rock-paper-scissors-clipart-png-download.png"
+                    alt="">
+                <img class="scissor1 hidden" width="140px"
+                    src="https://www.pinclipart.com/picdir/big/536-5360227_scissors-hand-rock-paper-scissors-png-clipart.png"
+                    alt="none">
+            </div>
+            
+            <h2 class="hidden line3 popup">Choose your Move</h2>
+            <h2 class="wait hidden">Wait...</h2>
+            <div class="move">
+                <img class="rock hidden hover" width="130px"
+                    src="https://www.pinclipart.com/picdir/big/559-5590543_rock-paper-scissors-png-clipart.png"
+                    alt="none">
+                <img class="paper hidden hover" width="130px"
+                    src="https://www.pinclipart.com/picdir/big/51-511523_rock-paper-rock-paper-scissors-clipart-png-download.png"
+                    alt="">
+                <img class="scissor hidden hover" width="140px"
+                    src="https://www.pinclipart.com/picdir/big/536-5360227_scissors-hand-rock-paper-scissors-png-clipart.png"
+                    alt="none">
+            </div>
+        </div>
+        <div class="ghar">
+            <button class="retry btn hidden" id="chhotu">Retry</button>
+        <button class="home hidden btn" id="chhotu">Home</button>
+
+        </div>
+        
+
+        <h2 class="line1 popup">Tap to play</h2>
+
+        <button class="start btn">Start</button>
+    </div>
+    <audio id="backgroundMusic" loop src="pixel-fight-8-bit-arcade-music-background-music-for-video-208775.mp3"></audio>
+    <script src="app.js"></script>
+</body>
+
+</html>
