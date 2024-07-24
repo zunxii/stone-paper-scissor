@@ -1,7 +1,7 @@
 let computer1 = ["rock1", "paper1", "scissor1"]
 let computer = ["rock", "paper", "scissor"]
 
-
+let move1 = document.querySelector(".move1")
 let rock1 = document.querySelector(".rock1")
 let paper1 = document.querySelector(".paper1")
 let scissor1 = document.querySelector(".scissor1")
@@ -18,10 +18,22 @@ let logo = document.querySelector(".logo")
 let title = document.querySelector(".title")
 let mini = document.querySelector(".mini")
 let hand = document.querySelector(".hand")
+let score = document.querySelector(".score")
+let lost = document.getElementById("lost")
+let tap = document.getElementById("tap")
+let pick = document.getElementById("pick")
+let winSound = document.getElementById("winSound")
+let bgm = document.getElementById("bgm")
 let userMove;
+
+let you = 0
+let him = 0
+
+window.onload = bgm.play()
 
 
 function play(){
+    tap.play()
     start.classList.add("hidden")
     line1.classList.add("hidden")
     rock.classList.remove("hidden")
@@ -33,6 +45,22 @@ function play(){
     mini.classList.remove("hidden")
 }
 start.addEventListener("click", play)
+retry.addEventListener("click", () => {
+  play()
+  retry.classList.add("hidden")
+  home.classList.add("hidden")
+  wait.classList.add("hidden")
+  move1.classList.add("hidden")
+  wait.innerHTML = `Wait...`
+  scissor1.classList.add("hidden")
+  rock1.classList.add("hidden")
+  paper1.classList.add("hidden")
+  scissor.classList.add("hover")
+  rock.classList.add("hover")
+  paper.classList.add("hover")
+
+}
+)
 
 rock.addEventListener("click", () => {
     scissor.classList.add("hidden")
@@ -40,6 +68,7 @@ rock.addEventListener("click", () => {
     playScreen()
     rock.classList.remove("hover")
     userMove = "rock"
+    pick.play()
 
 }
 )
@@ -49,6 +78,7 @@ paper.addEventListener("click", () => {
     paper.classList.remove("hover")
     playScreen()
     userMove = "paper"
+    pick.play()
 
 }
 )
@@ -58,6 +88,7 @@ scissor.addEventListener("click", () => {
     scissor.classList.remove("hover")
     playScreen()
     userMove = "scissor"
+    pick.play()
 
 }
 )
@@ -89,18 +120,22 @@ function playScreen() {
     if(user===comp){
         wait.classList.remove("hidden")
         wait.innerHTML = "Draw"
+        winSound.play()
     }
     else if(user === "rock" && comp === "scissor" || user === "paper" && comp ==="rock" || user ==="scissor" && comp ==="paper"){
         wait.classList.remove("hidden")
         wait.innerHTML = "You win!!"
+        winSound.play()
      }
      else{
         wait.classList.remove("hidden")
         wait.innerHTML = "You Lose!!"
+        lost.play()
      }
   }
 
 function reset(){
+    tap.play()
     start.classList.remove("hidden")
     line1.classList.remove("hidden")
     rock.classList.add("hidden")
@@ -120,6 +155,7 @@ function reset(){
     paper.classList.add("hover")
     scissor.classList.add("hover")
     mini.classList.add("hidden")
+    
 }
 
 home.addEventListener("click", reset)
@@ -127,8 +163,8 @@ home.addEventListener("click", reset)
 const backgroundMusic = document.getElementById("backgroundMusic");
 
 // Play the audio when the page loads
-window.addEventListener("load", () => {
-    backgroundMusic.play().catch(error => {
-        console.error("Background music could not be played automatically:", error);
-    });
-});
+// window.addEventListener("load", () => {
+//     backgroundMusic.play().catch(error => {
+//         console.error("Background music could not be played automatically:", error);
+//     });
+// });

@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
     <header>
         <h1>Rock Paper<br> <span class="S">Scissors</span></h1>
@@ -18,8 +16,6 @@
             <img class="title" src="Site-logo.webp" width="250px" alt="none">
         <img class="logo" src="titlee.png" width="120px" alt="none">
         </div>
-        
-
         <div class="hand">
             <img src="titlee.png" class="mini hidden" width="180px" alt="">
             <div class="move1">
@@ -33,7 +29,6 @@
                     src="https://www.pinclipart.com/picdir/big/536-5360227_scissors-hand-rock-paper-scissors-png-clipart.png"
                     alt="none">
             </div>
-            
             <h2 class="hidden line3 popup">Choose your Move</h2>
             <h2 class="wait hidden">Wait...</h2>
             <div class="move">
@@ -51,13 +46,14 @@
         <div class="ghar">
             <button class="retry btn hidden" id="chhotu">Retry</button>
         <button class="home hidden btn" id="chhotu">Home</button>
-
         </div>
-        
-
         <h2 class="line1 popup">Tap to play</h2>
-
         <button class="start btn">Start</button>
+        <audio id="lost" src="lost.wav"></audio>
+        <audio id="tap" src="button click.mp3"></audio>
+        <audio id="pick" src="pickSound.mp3"></audio>
+        <audio src="winSound.mp3" id="winSound"></audio>
+        <audio src="bgm1.mp3" id="bgm" autoplay loop></audio>
     </div>
     <audio id="backgroundMusic" loop src="pixel-fight-8-bit-arcade-music-background-music-for-video-208775.mp3"></audio>
     <script src="app.js"></script>
